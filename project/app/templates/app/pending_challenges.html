@@ -1,0 +1,11 @@
+<!-- pending_challenges.html -->
+{% extends 'app/base.html' %}
+
+{% block content %}
+<h1>Pending Challenges</h1>
+<ul>
+  {% for challenge in pending_challenges %}
+    <li>{{ challenge.title }} (Challenger: {{ challenge.challenger.username }})</li>
+  {% endfor %}
+</ul>
+{% endblock %}

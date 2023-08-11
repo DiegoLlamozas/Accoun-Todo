@@ -1,0 +1,36 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your App Title</title>
+</head>
+<body>
+    <header>
+        <h1>Your App Header</h1>
+    </header>
+
+    <nav>
+        <ul>
+            {% if not request.user.is_authenticated %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+            {% endif %}
+
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            <!-- Add other navigation links as needed -->
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}
+        <!-- The content of child templates will go here -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; {{ year }} Your App Name</p>
+    </footer>
+</body>
+</html>

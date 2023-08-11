@@ -1,0 +1,11 @@
+<!-- create_challenge.html -->
+{% extends 'app/base.html' %}
+
+{% block content %}
+  <h2>Create Task</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create Challenge</button>
+  </form>
+{% endblock %}

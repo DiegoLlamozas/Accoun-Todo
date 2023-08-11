@@ -1,0 +1,18 @@
+<!-- challenges.html -->
+{% extends 'app/base.html' %}
+
+{% block content %}
+<h1>Your Challenges</h1>
+<h2>Player Challenges:</h2>
+<ul>
+  {% for challenge in player_challenges %}
+    <li>{{ challenge.title }} - {{ challenge.description }}</li>
+  {% endfor %}
+</ul>
+<h2>Challenger Challenges:</h2>
+<ul>
+  {% for challenge in challenger_challenges %}
+    <li>{{ challenge.title }} - {{ challenge.description }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
